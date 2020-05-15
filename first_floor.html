@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>First_Floor</title>
+  <link rel="stylesheet" href="first_floor.css">
+</head>
+
+<body>
+  <!-- Desktop screen. Resolution = * -->
+  <div class="container">
+    <img src="First_Floor.jpg" alt="First_Floor image">
+
+    <div class="class_room_1_left">
+      <h3>Classroom</h3>
+    </div>
+
+    <div class="class_room_1_right">
+      <h3>Classroom</h3>
+    </div>
+
+    <div class="board">
+      Display data
+    </div>
+
+    <div class="class_room_2_left">
+      <h3>Classroom</h3>
+    </div>
+
+    <div class="class_room_2_right">
+      <h3>Classroom</h3>
+    </div>
+    
+    <div id="Myclock" class="time">
+       
+    </div>
+
+    <script type="text/javascript">
+
+      function showTime()
+      {
+          var date=new Date();
+          var year=date.getYear();
+
+          if(year<1000){
+              year+=1900;
+          }
+          var day=date.getDay();
+          var month=date.getMonth();
+          var daym=date.getDate();
+          var dayarray=new Array("Sunday,","Monday,","Tuesday,","Wednesday,","Thursday,","Friday,","Saturday,");
+          var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+  
+          var currentTime=new Date();
+          var h=currentTime.getHours();
+          var m=currentTime.getMinutes();
+          var s=currentTime.getSeconds();
+         
+         if(h==24){
+             h=0;
+         }
+         else if(h>12){
+             h=h-0;
+         }
+         h=(h<10)?"0"+h:h;
+         m=(m<10)?"0"+m:m;
+         s=(s<10)?"0"+s:s;
+  
+         var clock=document.getElementById("Myclock");
+         
+         document.getElementById("Myclock").innerText="" +dayarray[day]+ " " +daym+ " " +montharray[month]+ " "+year+ " | "+ h +":" +m+ ":" +s ;
+         document.getElementById("Myclock").textContent="" +dayarray[day]+ " " +daym+ " " +montharray[month]+ " "+year+ " | "+ h +":" +m+ ":" +s ;
+  
+         setTimeout(showTime,1000);
+      }
+      showTime();
+      </script>
+      
+    <div class="class_room_3">
+      <h3>Classroom</h3>
+    </div>
+
+    <div class="wash_room">
+      <h3>Washroom</h3>
+    </div>
+
+    <div class="open_space">
+      <h3>Open Space</h3>
+    </div>
+
+    <div class="stairs_1">
+      <h3>Stairs</h3>
+      <button class="stairs_1_button button" type="button" name="button"><a href="second_floor.html" target="_blank">Second Floor</a></button>
+    </div>
+
+    <div class="stairs_2">
+      <h3>Stairs</h3>
+      <button class="stairs_2_button button" type="button" name="button"><a href="second_floor.html" target="_blank">Second Floor</a></button>
+    </div>
+
+    <div class="lab">
+      <h3>Lab</h3>
+    </div>
+
+    <div class="conference_room">
+      <h3>Conference Room</h3>
+    </div>
+
+    <div class="examination_section">
+      <h3>Examination Section</h3>
+    </div>
+
+    <div class="academic_section">
+      <h3>Academic Section</h3>
+    </div>
+    <div class="staff_room">
+      <h3>Staff Room</h3>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
